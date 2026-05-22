@@ -60,7 +60,7 @@ pa_list = [
     (["bye"], bye_action),
 ]
 
-def search_pa_list(src: List[str]) -> List[str]:
+def search_pa_list(src):
     for pat, act in pa_list:
         mat = match(pat, src)
         if mat is not None:
