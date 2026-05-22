@@ -38,11 +38,29 @@ courses = {
         "description": "calculus iii",
         "category": "major"
     },
+    "cs 233": {
+        "credits": 4,
+        "prerequisites": ["cs 225", "cs 128", "cs 173"],
+        "description": "computer architecture",
+        "category": "major"
+    },
+    "cs 341": {
+        "credits": 4,
+        "prerequisites": ["cs 225", "cs 233"],
+        "description": "system programming",
+        "category": "major"
+    },
     "cs 225": {
         "credits": 4,
         "prerequisites": ["cs 128"],
         "description": "data structures",
         "category": "major"
+    },
+    "cs 421": {
+        "credits": 3,
+        "prerequisites": ["cs 233", "cs 374", "math 225"],
+        "description": "programming languages & compilers",
+        "category": "major",
     },
     "cs 374": {
         "credits": 4,

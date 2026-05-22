@@ -27,6 +27,22 @@ def category_handler(matches):
         return []
     return [courses[course]["category"]]
 
+def required_by_handler(matches):
+    prereq = matches[0]
+    result = []
+    for course, data in courses.items():
+        if prereq in data["prerequisites"]:
+            result.append(course)
+    return result if result else ["none"]
+
+def category_list_handler(matches):
+    cat = matches[0]
+    result = []
+    for course, data in courses.items():
+        if data["category"] == cat:
+            result.append(course)
+    return result if result else ["none"]
+
 def bye_action(dummy):
     raise KeyboardInterrupt
 
@@ -38,6 +54,9 @@ pa_list = [
     (str.split("what category is %"), category_handler),
     (str.split("what is the course name for %"), description_handler),
     (str.split("what classes do i need to take before taking %"), prereq_handler),
+    (str.split("what classes require %"), required_by_handler),
+    (str.split("what courses are in %"), category_list_handler),
+    (str.split("what courses do i need to fulfill my _ requirements"), category_list_handler),
     (["bye"], bye_action),
 ]
 
