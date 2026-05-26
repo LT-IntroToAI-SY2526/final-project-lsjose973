@@ -46,6 +46,7 @@ def category_list_handler(matches):
 def bye_action(dummy):
     raise KeyboardInterrupt
 
+
 pa_list = [
     (str.split("what are the prerequisites for %"), prereq_handler),
     (str.split("how many credits is %"), credits_handler),
